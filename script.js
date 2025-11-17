@@ -42,10 +42,10 @@ let lastScroll = 0;
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
 
-    if (currentScroll > 100) {
-        header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+    if (currentScroll > 50) {
+        header.classList.add('scrolled');
     } else {
-        header.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+        header.classList.remove('scrolled');
     }
 
     lastScroll = currentScroll;
