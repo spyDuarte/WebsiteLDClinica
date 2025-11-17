@@ -3,8 +3,16 @@
 ## Status Atual
 
 ✅ Website personalizado com o nome **Dr. Lucas Duarte**
-✅ Workflow do GitHub Actions configurado
-✅ Código commitado na branch `claude/doctor-portfolio-website-01DRAi6cQcZDhTfxPL1HhBEz`
+✅ Workflow do GitHub Actions configurado e otimizado
+✅ Arquivo `.nojekyll` criado para evitar processamento Jekyll
+✅ Código commitado e pronto para deploy
+
+## ⚠️ Correções Aplicadas
+
+- Workflow simplificado para melhor compatibilidade
+- Adicionado suporte para múltiplas branches
+- Arquivo `.nojekyll` para evitar conflitos com Jekyll
+- Permissões corrigidas no workflow
 
 ## Como Ativar o GitHub Pages
 
@@ -92,11 +100,63 @@ Se desejar usar um domínio próprio (ex: www.drlucasduarte.com.br):
 3. Em **Settings** → **Pages**, adicione seu domínio personalizado
 4. Marque a opção "Enforce HTTPS"
 
-## Suporte
+## 🔧 Troubleshooting - Resolução de Problemas
+
+### Erro: "GitHub Pages não está ativado"
+
+**Solução:**
+1. Vá em **Settings** → **Pages**
+2. Em **Source**, selecione **GitHub Actions**
+3. Salve e aguarde
+
+### Erro: "Deploy failed" ou "Workflow failed"
+
+**Solução:**
+1. Vá em **Settings** → **Actions** → **General**
+2. Em **Workflow permissions**, selecione:
+   - ✅ **Read and write permissions**
+3. Em **Actions permissions**, certifique-se de que:
+   - ✅ **Allow all actions and reusable workflows** está selecionado
+4. Clique em **Save**
+5. Vá em **Actions** e clique em **Re-run all jobs**
+
+### Erro: "404 - Page not found"
+
+**Solução:**
+1. Aguarde 2-5 minutos após o deploy (pode levar um tempo)
+2. Limpe o cache do navegador (Ctrl+Shift+R)
+3. Verifique se a URL está correta: `https://spyduarte.github.io/WebsiteLDClinica/`
+4. Em **Settings** → **Pages**, verifique se o site está "Active"
+
+### Erro: "Permission denied" ou "403"
+
+**Solução:**
+1. Vá em **Settings** → **Actions** → **General**
+2. Em **Workflow permissions**:
+   - ✅ Marque **Read and write permissions**
+   - ✅ Marque **Allow GitHub Actions to create and approve pull requests**
+3. Salve e tente novamente
+
+### CSS/JS não está carregando
+
+**Solução:**
+- Os arquivos `styles.css` e `script.js` devem estar na raiz do repositório
+- Verifique se o arquivo `.nojekyll` existe na raiz
+- Force refresh com Ctrl+Shift+R
+
+### Como verificar se o deploy funcionou
+
+1. Vá em **Actions** no GitHub
+2. Clique no workflow mais recente
+3. Verifique se todas as etapas têm ✅ verde
+4. Na etapa "Deploy to GitHub Pages", copie a URL do site
+
+## 🆘 Suporte
 
 Para problemas ou dúvidas:
-- Verifique a aba **Actions** no GitHub para logs de deploy
+- Verifique a aba **Actions** no GitHub para logs detalhados
 - Consulte a documentação do GitHub Pages: https://docs.github.com/pages
+- Verifique se as permissões estão corretas em Settings → Actions
 
 ## Checklist Final
 
