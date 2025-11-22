@@ -410,13 +410,83 @@
     }, observerOptions);
 
     // ==========================================================================
+    // SCROLL REVEAL FOR .reveal ELEMENTS
+    // ==========================================================================
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    // ==========================================================================
+    // COUNTER ANIMATION (Prova Social)
+    // Animação de contagem para números de estatísticas
+    // ==========================================================================
+    function animateCounter(element) {
+        const text = element.textContent;
+        const target = parseInt(text.replace(/\D/g, ''));
+
+        if (isNaN(target)) return;
+
+        const duration = 2000; // 2 segundos
+        const frameDuration = 1000 / 60; // 60fps
+        const totalFrames = Math.round(duration / frameDuration);
+        const easeOutQuad = t => t * (2 - t); // Easing function
+
+        let frame = 0;
+        const suffix = text.match(/[+%]/) ? text.match(/[+%]/)[0] : '';
+        const hasPlus = text.includes('+');
+        const hasPercent = text.includes('%');
+
+        const counter = setInterval(() => {
+            frame++;
+            const progress = easeOutQuad(frame / totalFrames);
+            const currentValue = Math.round(target * progress);
+
+            // Formatar número
+            let formattedValue = currentValue.toLocaleString('pt-BR');
+
+            // Reconstruir o HTML com spans coloridos
+            if (hasPlus) {
+                element.innerHTML = `${formattedValue}<span class="accent">+</span>`;
+            } else if (hasPercent) {
+                element.innerHTML = `${formattedValue}<span class="accent">%</span>`;
+            } else {
+                element.textContent = formattedValue;
+            }
+
+            if (frame === totalFrames) {
+                clearInterval(counter);
+            }
+        }, frameDuration);
+    }
+
+    // Observer para contadores
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                counterObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+
+    // ==========================================================================
     // INITIALIZATION
     // ==========================================================================
     function init() {
         // Initialize theme
         initTheme();
 
-        // Setup animation observers
+        // Setup animation observers for cards
         const animatedElements = document.querySelectorAll(
             '.specialty-card, .location-card, .testimonial-card, .about-content, .feature-item'
         );
@@ -424,8 +494,20 @@
         animatedElements.forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            el.style.transition = 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
             animationObserver.observe(el);
+        });
+
+        // Setup reveal observers
+        const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+        revealElements.forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // Setup counter observers
+        const counterElements = document.querySelectorAll('.counter-number');
+        counterElements.forEach(el => {
+            counterObserver.observe(el);
         });
 
         // Initial scroll check

@@ -1,12 +1,36 @@
 /* =============================================================================
    DR. LUCAS DUARTE - WEBSITE STYLES
-   Layout Rigoroso Baseado na Proporção Áurea (φ = 1.618034)
+   Design Matemático Avançado + Técnicas de Marketing Científico
 
-   A proporção áurea aparece quando: a/b = (a+b)/a = φ ≈ 1.618034
-   Isso significa: 61.8% : 38.2% ou 1 : 0.618
+   FÓRMULAS MATEMÁTICAS APLICADAS:
+   ═══════════════════════════════════════════════════════════════════════════
+   1. PROPORÇÃO ÁUREA (φ = 1.618034)
+      - a/b = (a+b)/a = φ ≈ 1.618034
+      - Layout: 61.8% : 38.2% ou 1 : 0.618
 
-   Sequência de Fibonacci usada: 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144...
-   Cada número ÷ anterior ≈ φ
+   2. SEQUÊNCIA DE FIBONACCI
+      - 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233...
+      - Cada número ÷ anterior ≈ φ
+
+   3. REGRA DOS TERÇOS
+      - Divisão visual: 33.33% | 33.33% | 33.33%
+      - Pontos focais nos cruzamentos (regra de ouro)
+
+   4. ESCALA MODULAR
+      - Base × φ^n para hierarquia harmoniosa
+
+   5. ESPIRAL ÁUREA
+      - Guia natural do olhar através do layout
+
+   TÉCNICAS DE MARKETING APLICADAS:
+   ═══════════════════════════════════════════════════════════════════════════
+   - F-Pattern e Z-Pattern para fluxo de leitura
+   - Hierarquia Visual (Lei de Fitts)
+   - Prova Social Estratégica
+   - CTAs com Urgência/Escassez
+   - Psicologia das Cores (azul=confiança, dourado=premium)
+   - Gatilhos de Credibilidade
+   - Micro-interações para Engajamento
    ============================================================================= */
 
 /* Reset */
@@ -17,108 +41,259 @@
 }
 
 /* =============================================================================
-   PROPORÇÃO ÁUREA - VARIÁVEIS MATEMÁTICAS
+   SISTEMA MATEMÁTICO DE DESIGN
    ============================================================================= */
 :root {
     /* =========================================================================
-       CONSTANTES ÁUREAS
-       φ = 1.618034 (proporção áurea)
-       1/φ = 0.618034 (inverso)
-       φ² = 2.618034
+       CONSTANTES MATEMÁTICAS FUNDAMENTAIS
        ========================================================================= */
+
+    /* Proporção Áurea e derivados */
     --phi: 1.618034;
     --phi-inverse: 0.618034;
     --phi-squared: 2.618034;
     --phi-cubed: 4.236068;
+    --phi-fourth: 6.854102;
 
-    /* Proporções para layout (somam 100%) */
-    --golden-large: 61.8%;   /* 1/φ × 100 */
-    --golden-small: 38.2%;   /* (1 - 1/φ) × 100 */
+    /* Regra dos Terços */
+    --third: 33.333%;
+    --two-thirds: 66.666%;
 
-    /* =========================================================================
-       ESCALA DE ESPAÇAMENTO FIBONACCI
-       Base: 8px (0.5rem) - cada valor × φ
-       8, 13, 21, 34, 55, 89, 144px aproximados
-       ========================================================================= */
-    --space-1: 0.5rem;       /* 8px - base */
-    --space-2: 0.809rem;     /* 13px - 8 × φ */
-    --space-3: 1.309rem;     /* 21px - 13 × φ */
-    --space-4: 2.118rem;     /* 34px - 21 × φ */
-    --space-5: 3.427rem;     /* 55px - 34 × φ */
-    --space-6: 5.545rem;     /* 89px - 55 × φ */
-    --space-7: 8.972rem;     /* 144px - 89 × φ */
-    --space-8: 14.517rem;    /* 233px - 144 × φ */
+    /* Proporções Áureas para Layout */
+    --golden-large: 61.8%;
+    --golden-small: 38.2%;
+    --golden-major: 61.803398875%;
+    --golden-minor: 38.196601125%;
 
     /* =========================================================================
-       ESCALA TIPOGRÁFICA ÁUREA
-       Base: 16px - cada nível × φ ou ÷ φ
+       ESCALA FIBONACCI PRECISA
+       F(n) = F(n-1) + F(n-2), onde F(n)/F(n-1) → φ
+       Base: 8px (escolhido por ser múltiplo de 4 e divisível)
        ========================================================================= */
-    --text-xs: 0.618rem;     /* 10px - base ÷ φ */
-    --text-sm: 0.809rem;     /* 13px */
-    --text-base: 1rem;       /* 16px - base */
-    --text-lg: 1.618rem;     /* 26px - base × φ */
-    --text-xl: 2.618rem;     /* 42px - base × φ² */
-    --text-2xl: 4.236rem;    /* 68px - base × φ³ */
-    --text-3xl: 6.854rem;    /* 110px - base × φ⁴ */
+    --fib-1: 0.5rem;         /* 8px   - F(6) */
+    --fib-2: 0.8125rem;      /* 13px  - F(7) */
+    --fib-3: 1.3125rem;      /* 21px  - F(8) */
+    --fib-4: 2.125rem;       /* 34px  - F(9) */
+    --fib-5: 3.4375rem;      /* 55px  - F(10) */
+    --fib-6: 5.5625rem;      /* 89px  - F(11) */
+    --fib-7: 9rem;           /* 144px - F(12) */
+    --fib-8: 14.5625rem;     /* 233px - F(13) */
+    --fib-9: 23.5625rem;     /* 377px - F(14) */
+
+    /* Espaçamentos (alias para Fibonacci) */
+    --space-1: var(--fib-1);
+    --space-2: var(--fib-2);
+    --space-3: var(--fib-3);
+    --space-4: var(--fib-4);
+    --space-5: var(--fib-5);
+    --space-6: var(--fib-6);
+    --space-7: var(--fib-7);
+    --space-8: var(--fib-8);
 
     /* =========================================================================
-       LARGURAS ÁUREAS
-       Container base: 1000px dividido em proporção áurea
+       ESCALA TIPOGRÁFICA MODULAR (Razão Áurea)
+       Cada nível = anterior × φ (ou ÷ φ para menores)
+       Base: 1rem (16px) - tamanho ideal para leitura
        ========================================================================= */
-    --container-max: 1000px;
-    --container-large: 618px;   /* 1000 × 0.618 */
-    --container-small: 382px;   /* 1000 × 0.382 */
-    --container-wide: 1618px;   /* 1000 × φ */
+    --text-2xs: 0.618rem;    /* ~10px - 16 ÷ φ² */
+    --text-xs: 0.764rem;     /* ~12px - 16 ÷ φ^1.5 */
+    --text-sm: 0.875rem;     /* 14px  - levemente menor */
+    --text-base: 1rem;       /* 16px  - BASE */
+    --text-md: 1.125rem;     /* 18px  - leitura confortável */
+    --text-lg: 1.618rem;     /* ~26px - 16 × φ */
+    --text-xl: 2.618rem;     /* ~42px - 16 × φ² */
+    --text-2xl: 4.236rem;    /* ~68px - 16 × φ³ */
+    --text-3xl: 6.854rem;    /* ~110px - 16 × φ⁴ */
+
+    /* Line Heights baseados em φ */
+    --leading-tight: 1.236;  /* 1 + (1/φ)/2.618 */
+    --leading-normal: 1.618; /* φ */
+    --leading-relaxed: 1.854; /* φ + 0.236 */
 
     /* =========================================================================
-       PALETA DE CORES
+       GRID ÁUREO E CONTAINERS
+       Baseado em subdivisões da proporção áurea
        ========================================================================= */
+    --container-xs: 377px;   /* F(14) - mobile */
+    --container-sm: 610px;   /* ~F(15) */
+    --container-md: 987px;   /* F(16) - tablet */
+    --container-lg: 1200px;  /* padrão desktop */
+    --container-xl: 1597px;  /* F(17) - wide */
+    --container-max: 1000px; /* Base áurea */
+    --container-large: 618px;
+    --container-small: 382px;
+    --container-wide: 1618px;
+
+    /* =========================================================================
+       PALETA CROMÁTICA - PSICOLOGIA DAS CORES PARA MEDICINA
+
+       Azul: Confiança, Profissionalismo, Calma, Autoridade
+       Dourado: Premium, Excelência, Qualidade, Sucesso
+       Verde: Saúde, Bem-estar, Crescimento
+       ========================================================================= */
+
+    /* Primária - Azul Profissional (Confiança) */
+    --primary-50: #e8f4fc;
+    --primary-100: #c5e4f7;
+    --primary-200: #9dd2f1;
+    --primary-300: #6fb9e8;
+    --primary-400: #4aa3de;
+    --primary-500: #2c7fc9;
+    --primary-600: #1e3a5f;  /* Principal */
+    --primary-700: #152a45;
+    --primary-800: #0f1f33;
+    --primary-900: #0a1422;
+
     --primary: #1e3a5f;
     --primary-light: #2c5282;
     --primary-dark: #152a45;
+    --primary-darker: #0f1f33;
+
+    /* Acento - Dourado Premium */
+    --accent-50: #fdf8e8;
+    --accent-100: #f9edc5;
+    --accent-200: #f3dd9d;
+    --accent-300: #e8c86b;
+    --accent-400: #d4af37;  /* Principal */
+    --accent-500: #c9a227;
+    --accent-600: #b8941f;
+    --accent-700: #9a7a17;
+    --accent-800: #7c6113;
+    --accent-900: #5e490e;
 
     --accent: #c9a227;
     --accent-light: #d4af37;
     --accent-dark: #b8941f;
 
+    /* Sucesso - Verde Saúde */
+    --success-50: #e6f7ed;
+    --success-100: #c3ebd3;
+    --success-200: #9ddeb8;
+    --success-300: #72d199;
+    --success-400: #4ec481;
+    --success-500: #38a169;  /* Principal */
+    --success-600: #2f8a59;
+    --success-700: #267349;
+    --success-800: #1d5c3a;
+    --success-900: #14452c;
+
+    --success: #38a169;
+    --success-light: #4ec481;
+    --success-dark: #2f8a59;
+
+    /* Erro/Alerta */
+    --error: #e53e3e;
+    --error-light: #fc8181;
+    --error-dark: #c53030;
+
+    --warning: #dd6b20;
+    --warning-light: #ed8936;
+    --warning-dark: #c05621;
+
+    /* Neutros */
     --text-dark: #1a202c;
     --text-medium: #4a5568;
     --text-light: #718096;
+    --text-muted: #a0aec0;
 
     --bg-white: #ffffff;
     --bg-light: #f7fafc;
+    --bg-lighter: #edf2f7;
     --bg-dark: #1a202c;
+    --bg-darker: #0d1117;
 
     --border: #e2e8f0;
-    --success: #38a169;
-    --error: #e53e3e;
+    --border-light: #edf2f7;
+    --border-dark: #cbd5e0;
 
-    /* Gradientes */
+    /* =========================================================================
+       GRADIENTES ESTRATÉGICOS
+       ========================================================================= */
     --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    --gradient-primary-dark: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
     --gradient-accent: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+    --gradient-accent-shine: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 50%, var(--accent-light) 100%);
     --gradient-soft: linear-gradient(135deg, #ebf4ff 0%, #f0f7ff 100%);
+    --gradient-premium: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--accent-dark) 100%);
+    --gradient-trust: linear-gradient(180deg, var(--primary-50) 0%, var(--bg-white) 100%);
+    --gradient-hero: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 38.2%, var(--primary-light) 100%);
+
+    /* Overlay com proporção áurea */
+    --gradient-golden-overlay: linear-gradient(
+        135deg,
+        rgba(201, 162, 39, 0.1) 0%,
+        transparent 38.2%,
+        transparent 61.8%,
+        rgba(30, 58, 95, 0.05) 100%
+    );
 
     /* =========================================================================
-       BORDER RADIUS - FIBONACCI
+       BORDER RADIUS - SEQUÊNCIA FIBONACCI
        ========================================================================= */
-    --radius-sm: 0.309rem;   /* 5px */
+    --radius-xs: 0.1875rem;  /* 3px */
+    --radius-sm: 0.3125rem;  /* 5px */
     --radius-md: 0.5rem;     /* 8px */
-    --radius-lg: 0.809rem;   /* 13px */
-    --radius-xl: 1.309rem;   /* 21px */
-    --radius-2xl: 2.118rem;  /* 34px */
+    --radius-lg: 0.8125rem;  /* 13px */
+    --radius-xl: 1.3125rem;  /* 21px */
+    --radius-2xl: 2.125rem;  /* 34px */
+    --radius-3xl: 3.4375rem; /* 55px */
+    --radius-full: 9999px;
 
     /* =========================================================================
-       SOMBRAS
+       SOMBRAS PROGRESSIVAS (Fibonacci para blur/spread)
        ========================================================================= */
-    --shadow-sm: 0 1px 2px rgba(26, 32, 44, 0.05);
-    --shadow-md: 0 4px 8px rgba(26, 32, 44, 0.08);
-    --shadow-lg: 0 8px 21px rgba(26, 32, 44, 0.1);
-    --shadow-xl: 0 13px 34px rgba(26, 32, 44, 0.12);
-    --shadow-2xl: 0 21px 55px rgba(26, 32, 44, 0.15);
-    --shadow-gold: 0 5px 13px rgba(201, 162, 39, 0.3);
+    --shadow-xs: 0 1px 2px rgba(26, 32, 44, 0.04);
+    --shadow-sm: 0 2px 3px rgba(26, 32, 44, 0.06);
+    --shadow-md: 0 3px 5px rgba(26, 32, 44, 0.08), 0 1px 3px rgba(26, 32, 44, 0.04);
+    --shadow-lg: 0 8px 13px rgba(26, 32, 44, 0.1), 0 3px 5px rgba(26, 32, 44, 0.06);
+    --shadow-xl: 0 13px 21px rgba(26, 32, 44, 0.12), 0 5px 8px rgba(26, 32, 44, 0.08);
+    --shadow-2xl: 0 21px 34px rgba(26, 32, 44, 0.14), 0 8px 13px rgba(26, 32, 44, 0.1);
+    --shadow-3xl: 0 34px 55px rgba(26, 32, 44, 0.16), 0 13px 21px rgba(26, 32, 44, 0.12);
 
-    /* Transições */
-    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Sombras Coloridas (Marketing: Premium feel) */
+    --shadow-gold: 0 8px 21px rgba(201, 162, 39, 0.25);
+    --shadow-gold-lg: 0 13px 34px rgba(201, 162, 39, 0.3);
+    --shadow-primary: 0 8px 21px rgba(30, 58, 95, 0.2);
+    --shadow-primary-lg: 0 13px 34px rgba(30, 58, 95, 0.25);
+    --shadow-success: 0 8px 21px rgba(56, 161, 105, 0.2);
+
+    /* Glow Effects (Chamar atenção para CTAs) */
+    --glow-gold: 0 0 21px rgba(201, 162, 39, 0.4);
+    --glow-primary: 0 0 21px rgba(30, 58, 95, 0.3);
+    --glow-success: 0 0 21px rgba(56, 161, 105, 0.3);
+
+    /* =========================================================================
+       TRANSIÇÕES E ANIMAÇÕES
+       Timing baseado em φ para fluidez natural
+       ========================================================================= */
+    --duration-instant: 0.1s;
+    --duration-fast: 0.2s;
+    --duration-normal: 0.3s;
+    --duration-slow: 0.5s;
+    --duration-slower: 0.8s;
+
+    /* Easing com Curva de Bezier otimizada */
+    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --ease-elastic: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-in-out-back: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+    --transition: var(--duration-normal) var(--ease-smooth);
+    --transition-fast: var(--duration-fast) var(--ease-smooth);
+    --transition-slow: var(--duration-slow) var(--ease-smooth);
+
+    /* =========================================================================
+       Z-INDEX SCALE (Fibonacci)
+       ========================================================================= */
+    --z-base: 1;
+    --z-dropdown: 8;
+    --z-sticky: 13;
+    --z-fixed: 21;
+    --z-modal-backdrop: 34;
+    --z-modal: 55;
+    --z-tooltip: 89;
+    --z-notification: 144;
 }
 
 /* =============================================================================
@@ -392,41 +567,87 @@ body {
 }
 
 /* =============================================================================
-   BUTTONS - Proporções Fibonacci
-   Padding: 13px 34px (proporção 13:34 ≈ φ)
+   BUTTONS - MARKETING OTIMIZADO
+   Proporção Fibonacci: 13px × 34px (13:34 ≈ φ)
+   Lei de Fitts: Tamanho proporcional à importância
    ============================================================================= */
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: var(--space-2);
-    padding: var(--space-2) var(--space-4); /* 13px 34px */
+    padding: var(--space-2) var(--space-4);
     border-radius: var(--radius-lg);
     text-decoration: none;
     font-weight: 600;
     font-size: var(--text-base);
     border: 2px solid transparent;
     cursor: pointer;
-    transition: var(--transition);
+    transition: all var(--transition);
     position: relative;
     overflow: hidden;
+    letter-spacing: 0.02em;
+}
+
+/* Efeito shimmer para chamar atenção */
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: left 0.6s var(--ease-smooth);
+}
+
+.btn:hover::before {
+    left: 100%;
 }
 
 .btn-icon {
-    width: var(--space-3); /* 21px */
+    width: var(--space-3);
     height: var(--space-3);
+    transition: transform var(--transition);
 }
 
+.btn:hover .btn-icon {
+    transform: scale(1.1);
+}
+
+/* CTA Primário - Máxima Conversão */
 .btn-primary {
-    background: var(--accent);
+    background: var(--gradient-accent);
     color: var(--text-dark);
     box-shadow: var(--shadow-gold);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 21px rgba(201, 162, 39, 0.4);
-    background: var(--accent-light);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: var(--shadow-gold-lg), var(--glow-gold);
+    background: var(--gradient-accent-shine);
+}
+
+.btn-primary:active {
+    transform: translateY(-2px) scale(0.98);
+}
+
+/* Animação de pulso sutil para CTAs principais */
+@keyframes pulse-subtle {
+    0%, 100% { box-shadow: var(--shadow-gold); }
+    50% { box-shadow: var(--shadow-gold-lg), var(--glow-gold); }
+}
+
+.btn-primary.pulse {
+    animation: pulse-subtle 2s ease-in-out infinite;
 }
 
 .btn-secondary {
@@ -440,7 +661,246 @@ body {
     background: white;
     color: var(--primary);
     border-color: white;
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+}
+
+/* Botão de Sucesso/Conversão */
+.btn-success {
+    background: var(--success);
+    color: white;
+    box-shadow: var(--shadow-success);
+}
+
+.btn-success:hover {
+    background: var(--success-dark);
+    transform: translateY(-4px);
+    box-shadow: 0 13px 34px rgba(56, 161, 105, 0.4);
+}
+
+/* Botão Grande (Hero/CTA principal) */
+.btn-lg {
+    padding: var(--space-3) var(--space-5);
+    font-size: var(--text-md);
+    border-radius: var(--radius-xl);
+}
+
+/* =============================================================================
+   PROVA SOCIAL & CREDIBILIDADE (Marketing)
+   ============================================================================= */
+
+/* Badge de Avaliação */
+.rating-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    background: var(--bg-white);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-lg);
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.rating-badge svg {
+    width: var(--space-3);
+    height: var(--space-3);
+    color: var(--accent);
+    fill: var(--accent);
+}
+
+.rating-badge .rating-count {
+    color: var(--text-light);
+    font-weight: 400;
+    font-size: var(--text-sm);
+}
+
+/* Trust Badges / Selos de Confiança */
+.trust-badges {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: var(--space-4);
+}
+
+.trust-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-3);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(8px);
+    transition: var(--transition);
+}
+
+.trust-badge:hover {
+    background: rgba(255, 255, 255, 0.2);
     transform: translateY(-3px);
+}
+
+.trust-badge svg {
+    width: var(--space-4);
+    height: var(--space-4);
+    color: var(--accent);
+}
+
+.trust-badge span {
+    font-size: var(--text-xs);
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Contador de Pacientes / Social Proof */
+.social-proof-counter {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-6);
+    margin: var(--space-5) 0;
+    flex-wrap: wrap;
+}
+
+.counter-item {
+    text-align: center;
+    padding: var(--space-4);
+    min-width: 144px; /* Fibonacci */
+}
+
+.counter-number {
+    font-size: var(--text-xl);
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1;
+    margin-bottom: var(--space-1);
+    display: block;
+}
+
+.counter-number .accent {
+    color: var(--accent);
+}
+
+.counter-label {
+    font-size: var(--text-sm);
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+/* Urgência / Escassez (Marketing) */
+.urgency-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    background: linear-gradient(135deg, var(--warning) 0%, var(--warning-light) 100%);
+    color: white;
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    animation: pulse-subtle 2s ease-in-out infinite;
+    box-shadow: 0 4px 13px rgba(221, 107, 32, 0.3);
+}
+
+.urgency-badge svg {
+    width: var(--space-2);
+    height: var(--space-2);
+}
+
+/* =============================================================================
+   SOCIAL PROOF SECTION
+   Seção estratégica para aumentar confiança e conversão
+   ============================================================================= */
+.social-proof {
+    background: var(--gradient-trust);
+    padding: var(--space-5) 0;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.social-proof-counter {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-4);
+    max-width: var(--container-lg);
+    margin: 0 auto;
+}
+
+.counter-item {
+    text-align: center;
+    padding: var(--space-3);
+    position: relative;
+}
+
+.counter-item::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 61.8%; /* Proporção áurea */
+    width: 1px;
+    background: var(--border);
+}
+
+.counter-item:last-child::after {
+    display: none;
+}
+
+.counter-number {
+    font-size: var(--text-xl);
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1;
+    margin-bottom: var(--space-1);
+    display: block;
+}
+
+.counter-number .accent {
+    color: var(--accent);
+}
+
+.counter-label {
+    font-size: var(--text-sm);
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .social-proof-counter {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .counter-item:nth-child(2)::after {
+        display: none;
+    }
+
+    .counter-item::after {
+        height: 50%;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-proof-counter {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-3);
+    }
+
+    .counter-number {
+        font-size: var(--text-lg);
+    }
+}
+
+/* =============================================================================
+   HERO CREDIBILITY (Badge de avaliação no hero)
+   ============================================================================= */
+.hero-credibility {
+    margin-bottom: var(--space-4);
+}
+
+.hero-credibility .rating-badge {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: var(--shadow-lg);
 }
 
 /* =============================================================================
@@ -1122,6 +1582,86 @@ section {
 }
 
 /* =============================================================================
+   CTA FINAL - SEÇÃO DE CONVERSÃO
+   Posicionada estrategicamente antes do footer
+   ============================================================================= */
+.cta-final {
+    background: var(--gradient-hero);
+    padding: var(--space-7) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-final::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 60% 40% at 80% 20%, rgba(201, 162, 39, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse 50% 30% at 20% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+}
+
+.cta-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: var(--container-large);
+    margin: 0 auto;
+}
+
+.cta-content h2 {
+    font-size: var(--text-xl);
+    font-weight: 800;
+    color: white;
+    margin-bottom: var(--space-3);
+    line-height: var(--leading-tight);
+}
+
+.cta-content p {
+    font-size: var(--text-lg);
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--space-5);
+    line-height: var(--leading-normal);
+}
+
+.cta-buttons {
+    display: flex;
+    gap: var(--space-3);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-final .btn-secondary {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.cta-final .btn-secondary:hover {
+    background: white;
+    color: var(--primary);
+    border-color: white;
+}
+
+@media (max-width: 610px) {
+    .cta-final {
+        padding: var(--space-6) 0;
+    }
+
+    .cta-content h2 {
+        font-size: var(--text-lg);
+    }
+
+    .cta-content p {
+        font-size: var(--text-base);
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+/* =============================================================================
    FOOTER
    ============================================================================= */
 .footer {
@@ -1386,17 +1926,367 @@ section {
 }
 
 /* =============================================================================
-   ANIMATIONS
+   ANIMAÇÕES AVANÇADAS & MICRO-INTERAÇÕES
+   Baseadas em princípios de engajamento e UX Psychology
    ============================================================================= */
+
+/* Animação de entrada (Fibonacci: 34px) */
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(34px); /* Fibonacci */
+        transform: translateY(34px);
     }
     to {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-34px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-34px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(34px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animação de escala (Micro-interação) */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Animação de flutuação (Elementos decorativos) */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-13px); /* Fibonacci */
+    }
+}
+
+/* Animação de brilho (CTAs) */
+@keyframes shimmer {
+    0% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+/* Animação de pulso (Atenção) */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+}
+
+/* Animação de contagem (Números) */
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(21px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animação de destaque (Elementos importantes) */
+@keyframes highlight {
+    0% {
+        box-shadow: 0 0 0 0 rgba(201, 162, 39, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 13px rgba(201, 162, 39, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(201, 162, 39, 0);
+    }
+}
+
+/* Animação de rotação suave */
+@keyframes rotateIn {
+    from {
+        opacity: 0;
+        transform: rotate(-10deg) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: rotate(0) scale(1);
+    }
+}
+
+/* Efeito de digitação (Hero text) */
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Cursor piscando */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* =============================================================================
+   CLASSES DE ANIMAÇÃO UTILITÁRIAS
+   ============================================================================= */
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s var(--ease-out-expo) forwards;
+}
+
+.animate-fade-in-down {
+    animation: fadeInDown 0.6s var(--ease-out-expo) forwards;
+}
+
+.animate-fade-in-left {
+    animation: fadeInLeft 0.6s var(--ease-out-expo) forwards;
+}
+
+.animate-fade-in-right {
+    animation: fadeInRight 0.6s var(--ease-out-expo) forwards;
+}
+
+.animate-scale-in {
+    animation: scaleIn 0.5s var(--ease-out-expo) forwards;
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-highlight {
+    animation: highlight 1.5s ease-in-out;
+}
+
+/* Delays baseados em Fibonacci para stagger effects */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-5 { animation-delay: 0.5s; }
+.delay-8 { animation-delay: 0.8s; }
+.delay-13 { animation-delay: 1.3s; }
+
+/* =============================================================================
+   MICRO-INTERAÇÕES
+   ============================================================================= */
+
+/* Hover com feedback visual */
+.hover-lift {
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+/* Hover com escala sutil */
+.hover-scale {
+    transition: transform var(--transition);
+}
+
+.hover-scale:hover {
+    transform: scale(1.03);
+}
+
+/* Hover com brilho */
+.hover-glow {
+    transition: box-shadow var(--transition);
+}
+
+.hover-glow:hover {
+    box-shadow: var(--glow-gold);
+}
+
+/* Efeito de ondulação (ripple) */
+.ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.ripple:active::after {
+    width: 200%;
+    height: 200%;
+}
+
+/* Efeito de inclinação 3D */
+.tilt-3d {
+    transition: transform var(--transition);
+    transform-style: preserve-3d;
+}
+
+.tilt-3d:hover {
+    transform: perspective(1000px) rotateX(5deg) rotateY(-5deg);
+}
+
+/* =============================================================================
+   ESTADOS VISUAIS (Focus, Active, Disabled)
+   ============================================================================= */
+
+/* Focus ring acessível e bonito */
+.focus-ring:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.3), 0 0 0 5px rgba(30, 58, 95, 0.1);
+}
+
+/* Estado desabilitado */
+.disabled,
+[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* =============================================================================
+   SCROLL REVEAL (Elementos que aparecem ao scroll)
+   ============================================================================= */
+.reveal {
+    opacity: 0;
+    transform: translateY(34px);
+    transition: opacity 0.6s var(--ease-out-expo), transform 0.6s var(--ease-out-expo);
+}
+
+.reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-34px);
+    transition: opacity 0.6s var(--ease-out-expo), transform 0.6s var(--ease-out-expo);
+}
+
+.reveal-left.revealed {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(34px);
+    transition: opacity 0.6s var(--ease-out-expo), transform 0.6s var(--ease-out-expo);
+}
+
+.reveal-right.revealed {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* =============================================================================
+   EFEITOS ESPECIAIS
+   ============================================================================= */
+
+/* Gradiente animado para textos */
+.gradient-text {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.gradient-text-animated {
+    background: linear-gradient(
+        90deg,
+        var(--accent),
+        var(--accent-light),
+        var(--accent),
+        var(--accent-light)
+    );
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 3s linear infinite;
+}
+
+/* Blur de fundo para overlays */
+.backdrop-blur {
+    backdrop-filter: blur(13px);
+    -webkit-backdrop-filter: blur(13px);
+}
+
+/* Glassmorphism */
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(13px);
+    -webkit-backdrop-filter: blur(13px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Skeleton loading */
+.skeleton {
+    background: linear-gradient(
+        90deg,
+        var(--bg-light) 25%,
+        var(--bg-lighter) 50%,
+        var(--bg-light) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: var(--radius-md);
 }
 
 /* =============================================================================
