@@ -1315,3 +1315,554 @@ html {
     background: var(--accent-color);
     color: var(--text-dark);
 }
+
+/* =============================================================================
+   ACCESSIBILITY - SKIP LINK
+   ============================================================================= */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color);
+    color: white;
+    padding: var(--space-phi-n1) var(--space-phi-0);
+    z-index: 10000;
+    transition: top 0.3s;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 0 0 var(--radius-md) 0;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* =============================================================================
+   THEME TOGGLE (DARK MODE)
+   ============================================================================= */
+.theme-toggle {
+    background: var(--bg-light);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: var(--space-phi-n2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    transition: all 0.3s ease;
+    margin-right: var(--space-phi-0);
+}
+
+.theme-toggle:hover {
+    background: var(--bg-gradient-soft);
+    border-color: var(--primary-color);
+}
+
+.theme-toggle svg {
+    width: 22px;
+    height: 22px;
+    color: var(--text-medium);
+    transition: all 0.3s ease;
+}
+
+.theme-toggle .moon-icon {
+    display: none;
+}
+
+.theme-toggle .sun-icon {
+    display: block;
+}
+
+/* =============================================================================
+   DARK MODE STYLES
+   ============================================================================= */
+[data-theme="dark"] {
+    --primary-color: #4a90d9;
+    --primary-light: #5ba3e8;
+    --primary-dark: #2c5282;
+
+    --accent-color: #d4af37;
+    --accent-light: #e5c158;
+    --accent-dark: #b8941f;
+
+    --text-dark: #f7fafc;
+    --text-medium: #cbd5e0;
+    --text-light: #a0aec0;
+    --text-muted: #718096;
+
+    --bg-white: #1a202c;
+    --bg-light: #2d3748;
+    --bg-cream: #252d3d;
+    --bg-dark: #0d1117;
+
+    --border-color: #4a5568;
+    --border-light: #2d3748;
+
+    --bg-gradient: linear-gradient(135deg, #2c5282 0%, #4a90d9 100%);
+    --bg-gradient-soft: linear-gradient(135deg, #2d3748 0%, #3d4a5c 100%);
+}
+
+[data-theme="dark"] .theme-toggle .moon-icon {
+    display: block;
+}
+
+[data-theme="dark"] .theme-toggle .sun-icon {
+    display: none;
+}
+
+[data-theme="dark"] #header {
+    background: rgba(26, 32, 44, 0.95);
+    border-bottom-color: rgba(74, 85, 104, 0.5);
+}
+
+[data-theme="dark"] #header.scrolled {
+    background: rgba(26, 32, 44, 0.98);
+}
+
+[data-theme="dark"] .nav-menu {
+    background: rgba(26, 32, 44, 0.98);
+}
+
+[data-theme="dark"] .placeholder-image {
+    background: var(--bg-gradient);
+}
+
+[data-theme="dark"] .feature-item,
+[data-theme="dark"] .specialty-card,
+[data-theme="dark"] .location-card,
+[data-theme="dark"] .testimonial-card,
+[data-theme="dark"] .contact-form {
+    background: var(--bg-light);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .detail-item,
+[data-theme="dark"] .info-item,
+[data-theme="dark"] .social-links {
+    background: var(--bg-dark);
+}
+
+[data-theme="dark"] .form-group input,
+[data-theme="dark"] .form-group select,
+[data-theme="dark"] .form-group textarea {
+    background: var(--bg-dark);
+    border-color: var(--border-color);
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] .form-group input::placeholder,
+[data-theme="dark"] .form-group textarea::placeholder {
+    color: var(--text-muted);
+}
+
+[data-theme="dark"] .footer {
+    background: linear-gradient(135deg, #0d1117 0%, #1a202c 100%);
+}
+
+[data-theme="dark"] .btn-primary {
+    background: var(--accent-color);
+    color: #1a202c;
+}
+
+[data-theme="dark"] .logo a {
+    color: var(--text-dark);
+}
+
+/* =============================================================================
+   SCROLL INDICATOR
+   ============================================================================= */
+.scroll-indicator {
+    position: absolute;
+    bottom: var(--space-phi-2);
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+}
+
+.scroll-indicator svg {
+    width: 32px;
+    height: 32px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+/* =============================================================================
+   FLOATING WHATSAPP BUTTON
+   ============================================================================= */
+.whatsapp-float {
+    position: fixed;
+    bottom: var(--space-phi-2);
+    right: var(--space-phi-1);
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    z-index: 999;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp-float svg {
+    width: 32px;
+    height: 32px;
+}
+
+.whatsapp-tooltip {
+    position: absolute;
+    right: 70px;
+    background: var(--text-dark);
+    color: white;
+    padding: var(--space-phi-n2) var(--space-phi-0);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.whatsapp-float:hover .whatsapp-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+[data-theme="dark"] .whatsapp-tooltip {
+    background: var(--bg-light);
+}
+
+/* =============================================================================
+   BACK TO TOP BUTTON
+   ============================================================================= */
+.back-to-top {
+    position: fixed;
+    bottom: calc(var(--space-phi-2) + 70px);
+    right: var(--space-phi-1);
+    width: 48px;
+    height: 48px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-lg);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: var(--primary-light);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+}
+
+.back-to-top svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* =============================================================================
+   BUTTON ICON & LOADING STATE
+   ============================================================================= */
+.btn-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: var(--space-phi-n2);
+    vertical-align: middle;
+}
+
+.btn-submit {
+    position: relative;
+}
+
+.btn-submit .btn-loading {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-phi-n2);
+}
+
+.btn-submit.loading .btn-text {
+    display: none;
+}
+
+.btn-submit.loading .btn-loading {
+    display: flex;
+}
+
+.spinner {
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* =============================================================================
+   FORM HONEYPOT (SPAM PROTECTION)
+   ============================================================================= */
+.form-honeypot {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+/* =============================================================================
+   FORM REQUIRED INDICATOR
+   ============================================================================= */
+.required {
+    color: var(--error-color);
+}
+
+/* =============================================================================
+   PRIVACY PAGE STYLES
+   ============================================================================= */
+.privacy-page {
+    padding-top: 120px;
+}
+
+.privacy-content {
+    padding: var(--space-phi-3) 0;
+}
+
+.privacy-content .section-header h1 {
+    font-size: var(--font-size-2xl);
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: var(--space-phi-0);
+}
+
+.privacy-article {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.privacy-section {
+    margin-bottom: var(--space-phi-2);
+    padding-bottom: var(--space-phi-2);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.privacy-section:last-child {
+    border-bottom: none;
+}
+
+.privacy-section h2 {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: var(--space-phi-0);
+}
+
+.privacy-section h3 {
+    font-size: var(--font-size-md);
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: var(--space-phi-1) 0 var(--space-phi-n1);
+}
+
+.privacy-section p {
+    color: var(--text-medium);
+    line-height: 1.8;
+    margin-bottom: var(--space-phi-0);
+}
+
+.privacy-section ul {
+    margin: var(--space-phi-0) 0;
+    padding-left: var(--space-phi-1);
+}
+
+.privacy-section li {
+    color: var(--text-medium);
+    line-height: 1.8;
+    margin-bottom: var(--space-phi-n2);
+}
+
+.privacy-section a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.privacy-section a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+.contact-info-box {
+    background: var(--bg-light);
+    padding: var(--space-phi-1);
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--accent-color);
+    margin-top: var(--space-phi-0);
+}
+
+.contact-info-box p {
+    margin-bottom: var(--space-phi-n2);
+}
+
+.privacy-actions {
+    display: flex;
+    gap: var(--space-phi-0);
+    justify-content: center;
+    margin-top: var(--space-phi-3);
+    flex-wrap: wrap;
+}
+
+/* Small button variant */
+.btn-sm {
+    padding: var(--space-phi-n2) var(--space-phi-0);
+    font-size: var(--font-size-sm);
+}
+
+/* =============================================================================
+   LOGO LINK STYLES
+   ============================================================================= */
+.logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo a:hover .highlight {
+    opacity: 0.9;
+}
+
+/* =============================================================================
+   FOOTER LEGAL LINKS
+   ============================================================================= */
+.footer-legal {
+    margin-top: var(--space-phi-n1);
+    font-size: var(--font-size-sm);
+}
+
+.footer-legal a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-legal a:hover {
+    color: var(--accent-light);
+}
+
+/* =============================================================================
+   LOCATION MAP RESPONSIVE
+   ============================================================================= */
+.location-map {
+    margin-top: var(--space-phi-1);
+}
+
+.location-map iframe {
+    border-radius: var(--radius-md);
+}
+
+/* =============================================================================
+   CONTACT INFO LINKS
+   ============================================================================= */
+.detail-item a,
+.info-item a {
+    color: var(--text-medium);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.detail-item a:hover,
+.info-item a:hover {
+    color: var(--primary-color);
+}
+
+/* =============================================================================
+   RESPONSIVE ADJUSTMENTS FOR NEW ELEMENTS
+   ============================================================================= */
+@media (max-width: 968px) {
+    .theme-toggle {
+        margin-right: var(--space-phi-n1);
+    }
+
+    .whatsapp-float {
+        width: 54px;
+        height: 54px;
+        bottom: var(--space-phi-1);
+        right: var(--space-phi-0);
+    }
+
+    .whatsapp-float svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .back-to-top {
+        width: 44px;
+        height: 44px;
+        bottom: calc(var(--space-phi-1) + 64px);
+        right: var(--space-phi-0);
+    }
+
+    .whatsapp-tooltip {
+        display: none;
+    }
+
+    .privacy-page {
+        padding-top: 100px;
+    }
+}
+
+@media (max-width: 640px) {
+    .privacy-content .section-header h1 {
+        font-size: var(--font-size-xl);
+    }
+
+    .privacy-section h2 {
+        font-size: var(--font-size-md);
+    }
+
+    .privacy-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .privacy-actions .btn {
+        text-align: center;
+    }
+}
