@@ -16,42 +16,7 @@
     const sections = document.querySelectorAll('section');
     const contactForm = document.getElementById('contactForm');
     const phoneInput = document.getElementById('phone');
-    const themeToggle = document.getElementById('themeToggle');
     const backToTopBtn = document.getElementById('backToTop');
-
-    // ==========================================================================
-    // THEME (DARK MODE) MANAGEMENT
-    // ==========================================================================
-    function initTheme() {
-        // Check for saved theme preference or system preference
-        const savedTheme = localStorage.getItem('theme');
-        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-        if (savedTheme) {
-            document.documentElement.setAttribute('data-theme', savedTheme);
-        } else if (systemPrefersDark) {
-            document.documentElement.setAttribute('data-theme', 'dark');
-        }
-    }
-
-    function toggleTheme() {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-    }
-
-    if (themeToggle) {
-        themeToggle.addEventListener('click', toggleTheme);
-    }
-
-    // Listen for system theme changes
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-        if (!localStorage.getItem('theme')) {
-            document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
-        }
-    });
 
     // ==========================================================================
     // MOBILE MENU
@@ -483,9 +448,6 @@
     // INITIALIZATION
     // ==========================================================================
     function init() {
-        // Initialize theme
-        initTheme();
-
         // Setup animation observers for cards
         const animatedElements = document.querySelectorAll(
             '.specialty-card, .location-card, .testimonial-card, .about-content, .feature-item'
